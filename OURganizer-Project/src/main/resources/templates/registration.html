@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registration</title>
+<title>OURganizer</title>
+<link th:href="@{/css/style.css}" rel="stylesheet"/>
 <link rel="stylesheet"
  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -11,17 +12,10 @@
 <body>
 
  <!-- create navigation bar ( header) -->
- <nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar nav1 navbar-fixed-top">
   <div class="container">
    <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed"
-     data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-     aria-controls="navbar">
-     <span class="sr-only">Toggle navigation</span> <span
-      class="icon-bar"></span> <span class="icon-bar"></span> <span
-      class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#" th:href="@{/}">OURganizer</a>
+    <a class="navbar-brand header" href="#" th:href="@{/}">OURganizer</a>
    </div>
   </div>
  </nav>
@@ -39,7 +33,7 @@
       to OURganizer!</div>
     </div>
 
-    <h1>Registration</h1>
+    <h1>Register for OURganizer!</h1>
 
     <form th:action="@{/registration}" method="post" th:object="${user}">
      <div class="form-group">
