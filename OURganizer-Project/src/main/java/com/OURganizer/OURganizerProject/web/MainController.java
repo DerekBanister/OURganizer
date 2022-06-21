@@ -15,4 +15,14 @@ public class MainController {
     public String home() {
         return "index";
     }
+    
+    @GetMapping("/credentials")
+    public String credentials() {
+        return "credentials";
+    }
+    
+    @GetMapping("/websites")
+    public String websites() {
+        return "websites";
+    }
 }
