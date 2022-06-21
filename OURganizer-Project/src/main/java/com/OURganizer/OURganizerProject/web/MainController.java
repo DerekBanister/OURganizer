@@ -16,13 +16,9 @@ public class MainController {
         return "index";
     }
     
-    @GetMapping("/credentials")
-    public String credentials() {
-        return "credentials";
-    }
-    
-    @GetMapping("/websites")
-    public String websites() {
-        return "websites";
-    }
+//    @GetMapping("/credentials")
+//    public String credentials() {
+//        return "credentials";
+//    }
+
 }

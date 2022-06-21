@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.JoinColumn;
@@ -40,8 +41,19 @@ public class User {
             name = "user_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(
             name = "role_id", referencedColumnName = "id"))
-
+    
     private Collection < Role > roles;
+    
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "users_services",
+//            joinColumns = @JoinColumn(
+//                name = "user_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(
+//                name = "service_id", referencedColumnName = "id"))
+//    
+//    private Collection <Services> services;
+   
 
     public User() {
 
@@ -91,4 +103,13 @@ public class User {
     public void setRoles(Collection < Role > roles) {
         this.roles = roles;
     }
+
+//	public Collection<Services> getServices() {
+//		return services;
+//	}
+//
+//	public void setServices(Collection<Services> services) {
+//		this.services = services;
+//	}
+
 }
