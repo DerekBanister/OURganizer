@@ -7,3 +7,6 @@ This will *most likely* be my first full-stack project using Java/SpringBoot/SQL
 The figma document is a light design of what I believe could be acheivable in this timeframe and hours alloted for this project(Minimum Viable Product). I will reel back features as necessary. 
 
 # If you would like to track any of the early progress, feel free to check out [Figma](https://www.figma.com/file/UQQ5IrU5dDYFY8fakUKwtM/OURganizer?node-id=0%3A1)
+
+# Google slides link
+[Slides](https://docs.google.com/presentation/d/1FWK9CBWhsBmQJxyJDZNLKn8wmHw26EbZ1mrPnYNH7-Y/edit#slide=id.gfb64afd192_0_83)

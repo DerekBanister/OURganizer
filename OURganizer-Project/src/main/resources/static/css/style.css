@@ -73,15 +73,9 @@ body{
     border-color: #FFFFFF;
 }
 
-@media only screen and (max-width: 1700px) {
-    .buttons {
-        height: 200px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .buttons {
-        height: 150px;
+@media only screen and (min-width: 1000px) {
+    .logo {
+        width: 500px;
     }
 }
 
@@ -93,26 +87,6 @@ body{
     }
 }
 
-@media only screen and (max-width: 800px) {
-    .buttons {
-        align-items: center;
-        height: 170px;
-    }
-}
 
-@media only screen and (max-width: 450px) {
-    .buttons {
-        display: block;
-        align-items: center;
-        height: 90px;
-    }
-}
 
-@media only screen and (max-width: 450px) {
-    .buttonHolder {
-        display: block;
-        justify-content: center;
-        align-content: center;
 
-    }
-}
