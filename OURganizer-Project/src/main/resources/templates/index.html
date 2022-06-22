@@ -25,21 +25,26 @@
    </div>
   </div>
  </nav>
-
+ <br>
  <br>
  <br>
 
  <div class="container intro">
- <h3 class="welcome">Welcome <span sec:authentication="principal.username"> User</span></h3>
-  <h1>Welcome to your dashboard! Here you can manage your login credentials to any website or service of your choosing, 
-  along with the option to store frequently used websites.</h1>
- </div>
+ <h3 >Welcome! <span class="welcome" sec:authentication="principal.username"> User</span></h3>
+ 
+  <h1>Welcome to your dashboard! Here you use either portals to store either frequently visited url's in the website's portal
+   or store login information for commonly used services (ex. Amazon, Yahoo, Gmail).</h1>
+  </div>
+  
+  <br>
+  <br>
+ 
  <div class="btnHolder">
     <a class="buttons" href="/" th:href="@{/api/credentials}">Credentials Portal</a>
      <a class="buttons" href="/" th:href="@{/websites}">Website's Portal</a>
 
  </div>
- 
+
 
 </body>
 </html>
