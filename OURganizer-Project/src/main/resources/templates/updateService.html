@@ -13,8 +13,8 @@
 		<hr>
 		<h2>Update Employee</h2>
 
-		<form action="#" th:action="@{/saveServices}" th:object="${services}"
-			method="POST">
+		<form th:action="@{/api/updateService/{id} (id=${services.id})}"
+		 th:object="${services}" method="POST">
 			
 			<!-- Add hidden form field to handle update -->
 			<input type="hidden" th:field="*{id}" />
@@ -25,7 +25,7 @@
 				
 				<input type="text" th:field="*{password}" class="form-control mb-4 col-4">
 				
-				<button type="submit" class="btn btn-info col-2"> Update Employee</button>
+				<button type="submit" class="btn btn-info col-2"> Update Service</button>
 		</form>
 		
 		<hr>

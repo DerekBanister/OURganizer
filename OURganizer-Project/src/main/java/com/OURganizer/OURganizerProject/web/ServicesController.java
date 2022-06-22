@@ -39,11 +39,26 @@ public class ServicesController {
 		return "redirect:/api/credentials";
 	}
 	
-	@GetMapping("/updateService/{id}")
+	@GetMapping("/update/{id}")
 	public String updateService(@PathVariable (value = "id") long id, Model model) {
 		Services services = servicesService.getServiceById(id);
+		
 		
 		model.addAttribute("services", services);
 		return "updateService";
 	}
+	
+    @PostMapping("/updateService/{id}")
+    public String updateServices(@PathVariable Long id, @ModelAttribute("services") Services service, Model model) {
+        // get student from database by id
+        Services existingService = servicesService.getServiceById(id);
+
+        existingService.setServiceName(service.getServiceName());
+        existingService.setUserName(service.getUserName());
+        existingService.setPassword(service.getPassword());
+
+        // save updated student object
+        servicesService.updateServices(existingService);
+        return "redirect:/api/credentials";
+    }
 }

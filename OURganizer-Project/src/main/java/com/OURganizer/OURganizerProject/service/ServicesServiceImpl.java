@@ -28,7 +28,7 @@ public class ServicesServiceImpl implements ServicesService {
 	}
 	//update
 	@Override
-	public Services getServiceById(long id) {
+	public Services getServiceById(Long id) {
 		Optional<Services> optional = servicesRepository.findById(id);
 		Services services = null;
 		if(optional.isPresent()) {
@@ -38,5 +38,10 @@ public class ServicesServiceImpl implements ServicesService {
 		}
 		return services;
 	}
+	
+	@Override
+    public Services updateServices(Services service) {
+        return servicesRepository.save(service);
+    }
 
 }
