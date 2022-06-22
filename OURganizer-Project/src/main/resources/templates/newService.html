@@ -20,7 +20,7 @@ xmlns:th="http://www.w3.org/1999/xhtml">
 	<div class="container">
 		<h1>OURganizer</h1>
 		<hr>
-		<h2>Save Credentials</h2>
+		<h2>Save Information Here:</h2>
 
 		<form th:action="@{/api/saveServices}" th:object="${services}"
 			method="POST">
@@ -33,7 +33,7 @@ xmlns:th="http://www.w3.org/1999/xhtml">
 				<input type="text" th:field="*{password}"
 				placeholder="Password" class="form-control mb-4 col-4">
 				
-				<button type="submit" class="btn btn-info col-2"> Save Employee</button>
+				<button type="submit" class="btn btn-info col-2"> Save </button>
 		</form>
 		
 		<hr>
