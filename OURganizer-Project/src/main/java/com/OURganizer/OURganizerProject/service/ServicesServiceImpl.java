@@ -44,4 +44,10 @@ public class ServicesServiceImpl implements ServicesService {
         return servicesRepository.save(service);
     }
 
+	@Override
+	public void deleteService(Long id) {
+		this.servicesRepository.deleteById(id);
+		
+	}
+
 }

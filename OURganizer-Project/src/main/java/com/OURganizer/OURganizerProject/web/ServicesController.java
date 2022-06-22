@@ -50,15 +50,20 @@ public class ServicesController {
 	
     @PostMapping("/updateService/{id}")
     public String updateServices(@PathVariable Long id, @ModelAttribute("services") Services service, Model model) {
-        // get student from database by id
+        // get service from database by id
         Services existingService = servicesService.getServiceById(id);
 
         existingService.setServiceName(service.getServiceName());
         existingService.setUserName(service.getUserName());
         existingService.setPassword(service.getPassword());
 
-        // save updated student object
+        // save updated service object
         servicesService.updateServices(existingService);
         return "redirect:/api/credentials";
+    }
+    @GetMapping("/deleteService/{id}")
+    public String deleteService(@PathVariable (value = "id") Long id) {
+    	this.servicesService.deleteService(id);
+    	return "redirect:/api/credentials";
     }
 }
