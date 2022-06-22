@@ -6,8 +6,8 @@ body{
 }
 
 .logo {
-	display: flex;
-    background-size: 100% 100%;
+	height:auto;
+	width:auto;
     justify-content: center;
     align-items: center;
 	
@@ -81,7 +81,7 @@ body{
     border-color: #FFFFFF;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     .logo {
         width: 500px;
     }
