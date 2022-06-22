@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -36,5 +37,13 @@ public class ServicesController {
 	public String saveCredentials(@ModelAttribute("services") Services services) {
 		servicesService.saveServices(services);
 		return "redirect:/api/credentials";
+	}
+	
+	@GetMapping("/updateService/{id}")
+	public String updateService(@PathVariable (value = "id") long id, Model model) {
+		Services services = servicesService.getServiceById(id);
+		
+		model.addAttribute("services", services);
+		return "updateService";
 	}
 }

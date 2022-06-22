@@ -7,4 +7,5 @@ import com.OURganizer.OURganizerProject.model.Services;
 public interface ServicesService {
 	List<Services> getAllServices();
 	void saveServices(Services service);
+	Services getServiceById(long id);
 }

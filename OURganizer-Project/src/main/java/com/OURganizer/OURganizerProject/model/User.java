@@ -14,6 +14,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.JoinColumn;
 
 @Entity
@@ -34,40 +38,42 @@ public class User {
 
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name = "users_roles",
         joinColumns = @JoinColumn(
             name = "user_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(
             name = "role_id", referencedColumnName = "id"))
-    
     private Collection < Role > roles;
     
-//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinTable(
-//            name = "users_services",
-//            joinColumns = @JoinColumn(
-//                name = "user_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(
-//                name = "service_id", referencedColumnName = "id"))
-//    
-//    private Collection <Services> services;
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_services",
+            joinColumns = @JoinColumn(
+                name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                name = "service_id", referencedColumnName = "id"))
+    private Collection <Services> services;
    
 
-    public User() {
-
-    }
-
-    public User(String firstName, String lastName, String email, String password, Collection < Role > roles) {
+    public User(String firstName, String lastName, String email, String password, Collection < Role > roles, Collection <Services> services) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.services = services;
     }
-    public Long getId() {
+    
+    public User() {
+		
+	}
+
+	public Long getId() {
         return id;
     }
     public void setId(Long id) {
@@ -104,12 +110,12 @@ public class User {
         this.roles = roles;
     }
 
-//	public Collection<Services> getServices() {
-//		return services;
-//	}
-//
-//	public void setServices(Collection<Services> services) {
-//		this.services = services;
-//	}
+	public Collection<Services> getServices() {
+		return services;
+	}
+
+	public void setServices(Collection<Services> services) {
+		this.services = services;
+	}
 
 }

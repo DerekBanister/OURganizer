@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.OURganizer.OURganizerProject.model.Role;
+import com.OURganizer.OURganizerProject.model.Services;
 import com.OURganizer.OURganizerProject.model.User;
 import com.OURganizer.OURganizerProject.repository.UserRepository;
 import com.OURganizer.OURganizerProject.web.dto.UserRegistrationDto;
@@ -25,7 +26,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
-
+    
+ 
     public UserServiceImpl(UserRepository userRepository) {
         super();
         this.userRepository = userRepository;
@@ -34,8 +36,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(UserRegistrationDto registrationDto) {
         User user = new User(registrationDto.getFirstName(),
-            registrationDto.getLastName(), registrationDto.getEmail(),
-            passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+            registrationDto.getLastName(), 
+            registrationDto.getEmail(),
+            passwordEncoder.encode(registrationDto.getPassword()), 
+            Arrays.asList(new Role("ROLE_USER")), registrationDto.getServices());
+
 
         return userRepository.save(user);
     }
