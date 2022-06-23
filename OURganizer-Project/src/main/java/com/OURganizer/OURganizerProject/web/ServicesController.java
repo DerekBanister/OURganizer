@@ -25,20 +25,20 @@ public class ServicesController {
 		model.addAttribute("listServices", servicesService.getAllServices());
 		return "credentials";
 	}
-	
+	//add new service
 	@GetMapping("/addCredentials")
 	public String addCredentials(Model model) {
 		Services service = new Services();
 		model.addAttribute("services", service);
 		return "newService";
 	}
-	
+	//save new service (post request)
 	@PostMapping("/saveServices")
 	public String saveCredentials(@ModelAttribute("services") Services services) {
 		servicesService.saveServices(services);
 		return "redirect:/api/credentials";
 	}
-	
+	//update a single service by the corresponding ID (routing)
 	@GetMapping("/update/{id}")
 	public String updateService(@PathVariable (value = "id") long id, Model model) {
 		Services services = servicesService.getServiceById(id);
@@ -47,7 +47,7 @@ public class ServicesController {
 		model.addAttribute("services", services);
 		return "updateService";
 	}
-	
+	// post request to update a existing service in db
     @PostMapping("/updateService/{id}")
     public String updateServices(@PathVariable Long id, @ModelAttribute("services") Services service, Model model) {
         // get service from database by id
@@ -61,6 +61,7 @@ public class ServicesController {
         servicesService.updateServices(existingService);
         return "redirect:/api/credentials";
     }
+    //delete a service from the db by the corresponding id
     @GetMapping("/deleteService/{id}")
     public String deleteService(@PathVariable (value = "id") Long id) {
     	this.servicesService.deleteService(id);

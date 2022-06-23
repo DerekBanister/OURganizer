@@ -53,8 +53,4 @@ public class Services {
 		this.password = password;
 	}
 	
-	
-	
-	
-	
 }
