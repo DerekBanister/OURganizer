@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.OURganizer.OURganizerProject.model.Websites;
 import com.OURganizer.OURganizerProject.repository.WebsitesRepository;
 
+@Service
 public class WebsiteServicesImpl implements WebsitesService {
 	
 	@Autowired

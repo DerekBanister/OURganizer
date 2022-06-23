@@ -13,24 +13,23 @@
 		<hr>
 		<h2>Update Employee</h2>
 
-		<form th:action="@{/api/updateService/{id} (id=${services.id})}"
-		 th:object="${services}" method="POST">
+		<form th:action="@{/api/updateWebsite/{id} (id=${websites.id})}"
+		 th:object="${websites}" method="POST">
 			
 			<!--hidden form field to handle update-->
 			<input type="hidden" th:field="*{id}" />
 			
-			<input type="text" th:field="*{serviceName}" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{websiteName}" class="form-control mb-4 col-4">
 				
-				<input type="text" th:field="*{userName}" class="form-control mb-4 col-4">
+				<input type="text" th:field="*{url}" class="form-control mb-4 col-4">
 				
-				<input type="text" th:field="*{password}" class="form-control mb-4 col-4">
 				
 				<button type="submit" class="btn btn-info col-2"> Update Service</button>
 		</form>
 		
 		<hr>
 		
-		<a th:href = "@{/api/credentials}"> Back to Service's List</a>
+		<a th:href = "@{/api/websites}"> Back to Website List</a>
 	</div>
 </body>
 </html>
