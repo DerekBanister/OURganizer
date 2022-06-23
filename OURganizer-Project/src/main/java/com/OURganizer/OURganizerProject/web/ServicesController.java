@@ -33,6 +33,7 @@ public class ServicesController {
 		return "newService";
 	}
 	//save new service (post request)
+	// want to hash pw before it is sent to database for security purposes
 	@PostMapping("/saveServices")
 	public String saveCredentials(@ModelAttribute("services") Services services) {
 		servicesService.saveServices(services);
