@@ -40,10 +40,8 @@ public class ServicesController {
 	}
 	//update a single service by the corresponding ID (routing)
 	@GetMapping("/update/{id}")
-	public String updateService(@PathVariable (value = "id") long id, Model model) {
+	public String updateService(@PathVariable (value = "id") Long id, Model model) {
 		Services services = servicesService.getServiceById(id);
-		
-		
 		model.addAttribute("services", services);
 		return "updateService";
 	}
