@@ -35,23 +35,21 @@ public class ServicesController {
 	//display list of services
 	@GetMapping("/credentials")
 	public String displayServices(Model model) {
-		
+		//get auth user
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String userEmail = ((UserDetails) principal).getUsername();
-		
+		//find authd user
 		User user = userRepository.findByEmail(userEmail);
 		
 		Long userId = user.getId();
 		System.out.println(userId);
-		
+		//show all services attached to loggedin user
 		Collection<Services> service = serviceRepository.getAllServicesLoggedIn(userId);
 		
 		model.addAttribute("listServices", service);
 		
 		return "credentials";
 	}
-	
-	
 	
 	//add new service
 	@GetMapping("/addCredentials")
@@ -60,11 +58,24 @@ public class ServicesController {
 		model.addAttribute("services", service);
 		return "newService";
 	}
+	
 	//save new service (post request)
 	// want to hash pw before it is sent to database for security purposes
 	@PostMapping("/saveServices")
 	public String saveCredentials(@ModelAttribute("services") Services services) {
+		//get and find auth'd user
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String userEmail = ((UserDetails) principal).getUsername();
+		
+		User user = userRepository.findByEmail(userEmail);
+		
+		Long userId = user.getId();
+		System.out.println(userId);
+		
+		services.setUser_id(user);
+		//save new service with auth'd user
 		servicesService.saveServices(services);
+		
 		return "redirect:/api/credentials";
 	}
 	
