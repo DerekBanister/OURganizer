@@ -1,6 +1,9 @@
 package com.OURganizer.OURganizerProject.web;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.OURganizer.OURganizerProject.model.Services;
+import com.OURganizer.OURganizerProject.model.User;
+import com.OURganizer.OURganizerProject.repository.ServicesRepository;
+import com.OURganizer.OURganizerProject.repository.UserRepository;
 import com.OURganizer.OURganizerProject.service.ServicesService;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Controller
 @RequestMapping("/api")
@@ -19,12 +26,33 @@ public class ServicesController {
 	@Autowired
 	private ServicesService servicesService;
 	
+	@Autowired
+	private ServicesRepository serviceRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	//display list of services
 	@GetMapping("/credentials")
 	public String displayServices(Model model) {
-		model.addAttribute("listServices", servicesService.getAllServices());
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String userEmail = ((UserDetails) principal).getUsername();
+		
+		User user = userRepository.findByEmail(userEmail);
+		
+		Long userId = user.getId();
+		System.out.println(userId);
+		
+		Collection<Services> service = serviceRepository.getAllServicesLoggedIn(userId);
+		
+		model.addAttribute("listServices", service);
+		
 		return "credentials";
 	}
+	
+	
+	
 	//add new service
 	@GetMapping("/addCredentials")
 	public String addCredentials(Model model) {

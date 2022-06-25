@@ -21,7 +21,7 @@ public class CustomUserDetails implements UserDetails {
         return this.user.getEmail();
     }
     
-    public Long getUsersId() {
+    public Long getUserId() {
         return this.user.getId();
     }
     
