@@ -57,7 +57,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                 name = "service_id", referencedColumnName = "id"))
     private Collection <Services> services;
-   
+    
 
     public User(String firstName, String lastName, String email, String password, Collection < Role > roles, Collection <Services> services) {
         super();
@@ -116,6 +116,11 @@ public class User {
 
 	public void setServices(Collection<Services> services) {
 		this.services = services;
+	}
+	
+	public void addServices(Services service) {
+		this.services.add(service);
+		
 	}
 
 }
