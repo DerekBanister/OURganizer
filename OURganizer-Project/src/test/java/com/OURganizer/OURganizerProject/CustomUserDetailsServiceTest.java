@@ -17,23 +17,22 @@ class CustomUserDetailsServiceTest {
 	@Autowired
 	private CustomUserDetailsService customService;
 	
-	@Autowired UserRepository userRepository;
+	@Autowired 
+	UserRepository userRepository;
 	
 	@Test
 	void test() {
 		User user = new User();
 		
-		user.setId((long) 15);
-		user.setEmail("duck@gmail.com");
-		user.setFirstName("ddbo");
-		user.setLastName("banny");
-		user.setPassword("him");
+		user.setId((long) 2);
+		user.setEmail("derek@gmail.com");
+		user.setFirstName("derek");
+		user.setLastName("banister");
+		user.setPassword("password");
 		
 		userRepository.save(user);
 		
-		
-		String actual = customService.loadUserByUsername("duck@gmail.com").getUsername();
-		
+		String actual = customService.loadUserByUsername("derek@gmail.com").getUsername();
 		
 		String expected = user.getEmail();
 		
