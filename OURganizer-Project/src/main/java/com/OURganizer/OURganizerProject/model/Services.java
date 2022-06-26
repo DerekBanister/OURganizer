@@ -20,7 +20,8 @@ public class Services {
 	private String userName;
 	private String password;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	//cascade detach only deletes the service, and not the foreign keys data attached
+	@ManyToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "user_id")
 	private User user_id;
 

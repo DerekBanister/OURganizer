@@ -40,8 +40,8 @@ public class ServicesController {
 		String userEmail = ((UserDetails) principal).getUsername();
 		//find authd user
 		User user = userRepository.findByEmail(userEmail);
-		
 		Long userId = user.getId();
+		
 		System.out.println(userId);
 		//show all services attached to loggedin user
 		Collection<Services> service = serviceRepository.getAllServicesLoggedIn(userId);
@@ -78,7 +78,7 @@ public class ServicesController {
 		
 		return "redirect:/api/credentials";
 	}
-	
+	 
 	//update a single service by the corresponding ID (routing)
 	@GetMapping("/update/{id}")
 	public String updateService(@PathVariable (value = "id") Long id, Model model) {
@@ -102,8 +102,10 @@ public class ServicesController {
     }
     //delete a service from the db by the corresponding id
     @GetMapping("/deleteService/{id}")
-    public String deleteService(@PathVariable (value = "id") Long id) {
-    	this.servicesService.deleteService(id);
+    public String deleteService(@PathVariable (value="id") Long id) {
+    	
+    	System.out.println(id);
+    	servicesService.deleteService(id);
     	return "redirect:/api/credentials";
     }
 }

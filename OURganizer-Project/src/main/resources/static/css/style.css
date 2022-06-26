@@ -36,7 +36,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid teal;
+	border: 5px solid teal;
 }
 .intro1 {
 	align-items:center;
