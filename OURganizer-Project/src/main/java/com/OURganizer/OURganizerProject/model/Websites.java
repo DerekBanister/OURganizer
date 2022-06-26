@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "websites")
 public class Websites {
 		@Id
-		@GeneratedValue(strategy = GenerationType.AUTO)
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private Long id;
 		private String websiteName;
 		private String url;
