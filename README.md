@@ -4,14 +4,25 @@
 
 ![logo](https://user-images.githubusercontent.com/89547994/175978670-f87ff623-bb69-4c36-887a-20c0c7aff202.png)
 
-# Some notes about this project:
+ <details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#some-notes-about-this-project">About The Project</a> </li>
+     <li><a href="#google-slides-link">Google Slides</a> </li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#functionality">Functionality</a></li>
+    <li><a href="#author">Author</a></li>
+  </ol>
+</details>
+
+## Some notes about this project:
 
 **This idea is not mine and is simply a professional/personal project as part of my training at TEKSystems for a contract oppurtunity as an Associate Software Developer at Optum/UnitedHealth Group. This will *most likely* be my first full-stack project using Java/SpringBoot/SQL as a backend and React as a front-end.
 The figma document is a light design of what I believe could be acheivable in this timeframe and hours alloted for this project(Minimum Viable Product). I will reel back features as necessary.**
 
-## If you would like to track any of the planning, feel free to check out [Figma](https://www.figma.com/file/UQQ5IrU5dDYFY8fakUKwtM/OURganizer?node-id=0%3A1)
+**If you would like to track any of the planning, feel free to check out [Figma](https://www.figma.com/file/UQQ5IrU5dDYFY8fakUKwtM/OURganizer?node-id=0%3A1)**
 
-## Google slides link
+## Google slides link for my presentation
 [Slides](https://docs.google.com/presentation/d/1FWK9CBWhsBmQJxyJDZNLKn8wmHw26EbZ1mrPnYNH7-Y/edit#slide=id.gfb64afd192_0_83)
 
 ## Built With
@@ -25,15 +36,15 @@ The figma document is a light design of what I believe could be acheivable in th
 
 ## Functionality
 
+**This is the first page a User will see when they log-in or register for this application. This dashboard currently offers only two options for portals, but many more will be added in future development.**
+
 ![dashboard](https://user-images.githubusercontent.com/89547994/175980127-ee96041d-d916-4c7d-bde9-e86dbf7fb79f.png)
 
-**This is the first page a User will see when they log-in or register for this application. This dashboard currently offers only two options for portals, but many more will be added in future development.
+**Any services or credentials added will be unique to each user. I implemented this by adding a unique user's ID as a foreign key to the table that holds the data for these credentials pictured above. I wanted to make sure each user's data was unique to their account and stored in a secure fashion.**
 
 ![ourganizerData](https://user-images.githubusercontent.com/89547994/175979735-076dbfe9-1982-45ad-838c-7531d3c6eced.png)
 
-**Any services or credentials added will be unique to each user. I implemented this by adding a unique user's ID as a foreign key to the table that holds the data for these credentials pictured above. I wanted to make sure each user's data was unique to their account and stored in a secure fashion.
-
-## Authors
+## Author
 
 * **DEREK BANISTER** 
 
