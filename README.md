@@ -8,7 +8,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#some-notes-about-this-project">About The Project</a> </li>
-     <li><a href="#google-slides-link">Google Slides</a> </li>
+     <li><a href="#google-slides-link-for-my-presentation">Google Slides</a> </li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#functionality">Functionality</a></li>
     <li><a href="#author">Author</a></li>
