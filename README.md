@@ -2,6 +2,8 @@
 
 **This is a personal organization app. It will serve as a hub for user’s to safely and securely store any personal data, ranging from passwords, bank statements, online reciepts or documents, medical records, to any other information you would like to securely store online. OURganizer will also act as a portal, where you can customize your home page to display frequently used websites/apps, and set calender reminders as well as write and save notes.**
 
+![logo](https://user-images.githubusercontent.com/89547994/175978670-f87ff623-bb69-4c36-887a-20c0c7aff202.png)
+
 # Some notes about this project:
 
 **This idea is not mine and is simply a professional/personal project as part of my training at TEKSystems for a contract oppurtunity as an Associate Software Developer at Optum/UnitedHealth Group. This will *most likely* be my first full-stack project using Java/SpringBoot/SQL as a backend and React as a front-end.
