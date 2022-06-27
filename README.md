@@ -23,6 +23,16 @@ The figma document is a light design of what I believe could be acheivable in th
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [MySQL](https://www.mysql.com/)
 
+## Functionality
+
+![dashboard](https://user-images.githubusercontent.com/89547994/175980127-ee96041d-d916-4c7d-bde9-e86dbf7fb79f.png)
+
+**This is the first page a User will see when they log-in or register for this application. This dashboard currently offers only two options for portals, but many more will be added in future development.
+
+![ourganizerData](https://user-images.githubusercontent.com/89547994/175979735-076dbfe9-1982-45ad-838c-7531d3c6eced.png)
+
+**Any services or credentials added will be unique to each user. I implemented this by adding a unique user's ID as a foreign key to the table that holds the data for these credentials pictured above. I wanted to make sure each user's data was unique to their account and stored in a secure fashion.
+
 ## Authors
 
 * **DEREK BANISTER** 
