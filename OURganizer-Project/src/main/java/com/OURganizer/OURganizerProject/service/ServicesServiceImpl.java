@@ -29,6 +29,7 @@ public class ServicesServiceImpl implements ServicesService {
 	//update
 	@Override
 	public Services getServiceById(Long id) {
+		//find a service by the corresponding service id
 		Optional<Services> optional = servicesRepository.findById(id);
 		Services services = null;
 		if(optional.isPresent()) {

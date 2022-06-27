@@ -10,6 +10,7 @@ import com.OURganizer.OURganizerProject.model.Services;
 
 @Repository
 public interface ServicesRepository extends JpaRepository<Services, Long>{
+	//custom query that grabs all services that match the corresponding user id
 	@Query(value = "SELECT * FROM services where user_id = :id", nativeQuery=true)
 	public Collection<Services> getAllServicesLoggedIn(Long id);
 }

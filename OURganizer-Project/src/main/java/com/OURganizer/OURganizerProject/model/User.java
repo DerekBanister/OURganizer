@@ -48,6 +48,8 @@ public class User {
             name = "role_id", referencedColumnName = "id"))
     private Collection < Role > roles;
     
+    //Unnecessary table, but didn't want to break app right before deadline so I left it
+    //it doesnt necessarily affect anything except creating an unused table in heidisql
     @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(

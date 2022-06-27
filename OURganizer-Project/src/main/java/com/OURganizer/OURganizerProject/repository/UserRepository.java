@@ -8,6 +8,7 @@ import com.OURganizer.OURganizerProject.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+	//custom query to find user by their email
 	 @Query("SELECT u FROM User u WHERE u.email = ?1")
 	    public User findByEmail(String email);
 }

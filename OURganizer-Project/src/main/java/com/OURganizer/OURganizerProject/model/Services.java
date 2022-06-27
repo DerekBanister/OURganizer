@@ -21,6 +21,7 @@ public class Services {
 	private String password;
 	
 	//cascade detach only deletes the service, and not the foreign keys data attached
+	//adding user_id as foreign key on this services table, to make each service(s) unique to a single user
 	@ManyToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "user_id")
 	private User user_id;
